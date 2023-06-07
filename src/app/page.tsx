@@ -3,16 +3,10 @@ import Layout, { siteTitle } from '../../components/layout';
 import utilStyles from '../../styles/utils.module.css';
 import { getSortedPostsData } from '../../lib/posts';
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+export default async function Home() {
 
-export default function Home({ allPostsData }) {
+  const allPostsData = await getSortedPostsData();
+
   return (
     <Layout home>
       <Head>

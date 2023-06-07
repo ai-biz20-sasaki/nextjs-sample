@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+const postsDirectory = path.join('./src/app', 'posts');
+//const postsDirectory = path.join(process.cwd(), 'posts'); //意図しないパスになりエラー
 
 export async function getSortedPostsData() {
   // Get file names under /posts
